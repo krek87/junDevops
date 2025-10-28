@@ -28,3 +28,28 @@ cd Documents\ \ \ \(copy\)
 # попробуйте все способы перемещаться между этими двумя директориями.
 cd -
 
+# 8 Находясь в директории своего пользователя, посмотрите содержимое директории /usr/bin/ используя 
+# полный и относительный пути
+ll /usr/bin/
+ll ../../usr/bin/
+
+# 9 Находясь в домашней директории своего пользователя создайте директорию /tmp/testdir используя полный и 
+# относительный пути
+
+mkdir /tmp/testdir
+mkdir ../../tmp/testdir
+
+# 10 Находясь в директории /usr/share/applications создайте директорию /home/user/testdir1/testdir11/testdir111 
+# и посмотрите разом содержмое всех поддиректорий директории /home/user/testdir1
+sudo mkdir -p '/home/user'/testdir1/testdir11/testdir111
+ll -R /home/user/testdir1
+
+# 11 Находясь в директории /var/log создайте одной командой директории /home/user/testdir2/testdir22 и
+# /tmp/testdir2/testdir22, а затем посмотрите одной командой содержимое директорий /home/user/testdir2 и
+# /tmp/testdir2/testdir2
+sudo mkdir -p '/home/user'/testdir2/testdir22 '/tmp'/testdir2/testdir22
+ll /home/user/testdir2 /tmp/testdir2/testdir22
+
+# 12 Находясь в директории /tmp используйте одну команду и относительные пути (используя знак ~), 
+# чтобы удалить директории /home/user/testdir1 и /tmp/testdir2/testdir22 с выводом информация об удалении 
+sudo rm -rv '/home/user'/testdir1 'testdir2'/testdir22
