@@ -1,0 +1,13 @@
+# 7. bash №1: bash-completion, alias, type
+
+# 1. Создайте «команду» (алиас), которая бы сохраняла список алиасов в файле
+touch ~/myalias.txt
+nano ~/.bashrc
+aliac al_save='alias >> ~/myalias.txt'
+
+# 2. Создайте два алиаса с одинаковыми названиями в ~/.bashrc. Какой из них работает?
+Работает последний из созданных. Также только он отображается в списке алиасов, при вводе команды alias
+
+# 3. Создайте команду getlog, которая будет показывать последние 5 строк файла /var/log/kern.log и 
+# одновременно добавлять вывод в файл mykernellog.
+alias getlog='touch ~/mykernellog && sudo tail -5 /var/log/kern.log && sudo tail -5 /var/log/kern.log >> ~/mykernellog' 
